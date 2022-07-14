@@ -28,7 +28,7 @@ export default function Quiz({data,setQuizNumber,quizNumber,setStop,stopWork,set
   useEffect(()=>{
     setQuestion(data[quizNumber-1])
     setIsActive(false)
-  },[data,quizNumber])
+  },[data,quizNumber,setIsActive])
 
   const handleCilck = (a)=>{
     setSelectAnswer(a)
