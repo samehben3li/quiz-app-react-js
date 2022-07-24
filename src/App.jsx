@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./app.css"
+import End from "./components/End";
 import Quiz from "./components/Quiz";
 import Start from "./components/Start";
 import Timer from "./components/Timer";
@@ -13,6 +14,21 @@ function App() {
   const [earned, setEarned] = useState("$ 0")
   const [isActive,setIsActive] = useState(false)
 
+  const handleQuit = ()=>{
+    setUsername(null)
+    setQuizNumber(1)
+    setStop(false)
+    setEarned("$ 0")
+    setIsActive(false)
+  }
+
+  const handleRestart = () => {
+    setQuizNumber(1)
+    setStop(false)
+    setEarned("$ 0")
+    setIsActive(false)
+  }
+
   useEffect(() => {
     quizNumber > 1 && setEarned(moneyPyramid.find(m => m.id === quizNumber - 1).amount)
   }, [quizNumber])
@@ -22,7 +38,7 @@ function App() {
       {username ? (
         <>
           <div className="main">
-            {stopWork ? (<h1 className="endGame">{ username } erned : {earned}</h1>) : (
+            {stopWork ? (<End username={username} handleQuit={handleQuit} handleRestart={handleRestart} earned={earned} />) : (
               <>
                 <div className="top">
                   <div className="timer"><Timer setStop={setStop} quizNumber={quizNumber} isActive={ isActive }/></div>

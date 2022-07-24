@@ -1,0 +1,54 @@
+.end {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.endBtn {
+    padding: 5px 20px;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btnRestart {
+    background-color: #020230;
+    color: white;
+    border: 1px solid white;
+    transition: all 0.5s ease-in-out;
+}
+
+.btnRestart:hover {
+    background-color: white;
+    color: #020230;
+}
+
+.btnQuit {
+    background-color: white;
+    color: #020230;
+    border: 1px solid #020230;
+    transition: all 0.5s ease-in-out;
+}
+
+.btnQuit:hover {
+    background-color: #020230;
+    color: white;
+    border: 1px solid white;
+}
